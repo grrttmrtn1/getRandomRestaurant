@@ -1,0 +1,49 @@
+<head>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css"> 
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename= 'js/script.js') }}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+</head>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+<div class="menu">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+</div>
+
+<h1 class="cool-header">Pick a Random Restaurant</h1>
+
+<form method="post">
+<div class="container form-container"> 
+    <div class="search"> 
+        <div class="row"> 
+            <div class="col-md-6"> 
+                <div class="search-1"> 
+                    <i class='bx bx-search-alt fas fa-search'></i> 
+                    <input type="text" placeholder="City" name="city" id="city"> 
+                </div> 
+            </div> 
+            <div class="col-md-6"> 
+                <div> 
+                    <div class="search-2"> 
+                    <i class='bx bxs-map fas fa-map-marker-alt' ></i> 
+                    <input type="text" placeholder="State" id="state" name="state"> 
+                    <button type="submit" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Search</button>
+                </div> 
+            </div> 
+        </div>
+     </div> 
+    </div>
+</div>
+<div class="error" id="error"></div>
+<div id="states" style="display: none;">"{{ data.states|safe }}"</div>
+<div id="cities" style="display: none;">"{{ data.cities|safe }}"</div>
+</form>
